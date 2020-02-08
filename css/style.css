@@ -1,0 +1,330 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  /*Your code here */
+/*  color: red;*/
+  padding-right: 20px;
+  display: inline;
+}
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none/*Your code here - remove the underline*/;
+}
+
+nav a:hover{
+  color: black;
+  font-weight: bold;
+  text-decoration: underline/*Your code here - add the underline*/;
+}
+
+.skip {
+  height: 40px;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px
+
+  /*Your code here - position relative to the parent */;
+  /*Your code here - place 40px higher */;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+.skip:hover a/*Your code here*/{
+/*Add the selector and rule to move the skip link to the exact top.*/
+  cursor: pointer;
+  top: 0px;;
+}
+
+
+nav a:focus {/*Your code here*/
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+/*Add the selector and code to put a 2px black border around all elements in focus.*/
+}
+
+
+footer{
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;
+  /* Can you explain what this does? 
+  If the placement for a grid item contains two lines, and the start line is further end-ward than the end line, swap the two lines. If the start line is equal to the end line, remove the end line.ref
+  ref: https://stackoverflow.com/questions/57268090/understanding-grid-negative-values
+  */
+  grid-row: 7 / 7;     /*Can you rewrite it?*/
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+.container{  /*Your code here  */
+  display: grid;
+  min-width: 400px;
+  grid-template-columns: 17% 66% 17%;
+  /*Provided*/
+  grid-template-rows: 30px auto auto auto auto auto 100px;
+  grid-row-gap: 15px;
+}
+
+.nav{
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  align-self: center;
+
+  /*Provided*/
+  background-color: #ddd;
+  padding: 0px 0px 20px 0px;
+  text-align: left;
+}
+
+
+header{
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url(../images/header.jpg);      /* Your code here - Link to header.jpg in the images folder */
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  /*Your code here - cover the entire row*/
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.about-image{
+  background-image: url(../images/about.jpg);
+  /*Your code here */
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 3/4;
+  max-height: 700px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.about{
+  /*Your code here */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 3/4;
+  z-index: 1;
+}
+
+.method-image{
+  background-image: url(../images/method.jpg);
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 4/5;
+  max-height: 700px;
+  z-index: -1;
+  overflow: hidden;
+  /*Your code here */
+}
+
+.method{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 4/5;
+  z-index: 1;
+    /*Your code here - start in the 2nd column*/
+}
+
+.clients-image{
+  background-image: url(../images/clients.jpg);
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 5/6;
+  max-height: 700px;
+  z-index: -1;
+  overflow: hidden;
+ /*Your code here */
+}
+
+.clients{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 5/6;
+  z-index: 1;
+ /*Your code here */
+}
+
+.contact-image{
+  background-image: url(../images/contact.jpg);
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 6/7;
+  max-height: 700px;
+  z-index: -1;
+  overflow: hidden;
+   /*Your code here */
+}
+
+.contact{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 6/7;
+  z-index: 1;
+   /*Your code here */
+}
+
+.text-block{
+  text-align: center;
+  align-self: center;
+   /*Your code here */
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: none !important; /* Your code here - set to default setting */
+    transition: none !important; /* Your code here - set to default setting */
+    z-index: 1;
+  }
+}
+
+
+@media screen and (min-width:800px){
+
+  .container{
+    /*Your code here */
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+    grid-row-gap: 15px;
+    width: 100vw;
+  }
+
+  .nav{
+    grid-column: 1/5;
+    grid-row: 1/2;
+    align-self: center;
+    background-color: #ddd;
+    text-align: right;
+    padding: 0px 0px 35px 0px;
+
+     /*Your code here */
+  }
+
+  .about-image{
+    background-image: url(../images/about.jpg);
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 3/4;
+    max-height: 700px;
+    z-index: -1;
+     /*Your code here */
+    }
+
+  .about{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row: 3/4;
+    z-index: 1;
+    /*Your code here */
+  }
+
+  .method-image{
+    background-image: url(../images/method.jpg);
+    grid-column: 3/5;
+    grid-row: 4/5;
+    max-height: 700px;
+    z-index: -1;
+    /*Your code here */
+  }
+
+  .method{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 4/5;
+    z-index: 1;
+      /*Your code here - start in the 2nd column*/
+  }
+
+  .clients-image{
+    background-image: url(../images/clients.jpg);
+    grid-column: 2/4;
+    grid-row: 5/6;
+    max-height: 700px;
+    z-index: -1;
+    /*Your code here */
+
+  }
+
+  .clients{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row: 5/6;
+    z-index: 1;
+    /*Your code here */
+  }
+
+  .contact-image{
+    background-image: url(../images/contact.jpg);
+    grid-column: 3/5;
+    grid-row: 6/7;
+    max-height: 700px;
+    z-index: -1;
+    /*Your code here */
+  }
+
+  .contact{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 6/7;
+    z-index: 1;
+    /*Your code here */
+   }
+
+}  /*End the media query*/
